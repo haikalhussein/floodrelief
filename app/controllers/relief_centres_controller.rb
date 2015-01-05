@@ -30,7 +30,7 @@ class ReliefCentresController < ApplicationController
 
     respond_to do |format|
       if @relief_centre.save
-        format.html { redirect_to @relief_centre, notice: 'Relief centre was successfully created.' }
+        format.html { redirect_to relief_centres_path, notice: 'Relief centre was successfully created.' }
         format.json { render :show, status: :created, location: @relief_centre }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class ReliefCentresController < ApplicationController
   def update
     respond_to do |format|
       if @relief_centre.update(relief_centre_params)
-        format.html { redirect_to @relief_centre, notice: 'Relief centre was successfully updated.' }
+        format.html { redirect_to relief_centres_path, notice: 'Relief centre was successfully updated.' }
         format.json { render :show, status: :ok, location: @relief_centre }
       else
         format.html { render :edit }
