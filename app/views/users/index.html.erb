@@ -1,0 +1,42 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Jajahan</th>
+      <th>Mukim</th>
+      <th>Jawatan</th>
+      <th>Nama</th>
+      <th>No. Telefon</th>
+      <th>Action</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.district %></td>
+        <td><%= user.mukim %></td>
+        <td><%= user.title %></td>
+        <td><%= user.name %></td>
+        <td><%= user.contact_no %></td>
+        <td>
+          <%= link_to 'Show', user %>
+          <%= link_to 'Edit', edit_user_path(user) %>
+          <%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>
+
+<br>
+
+<%= link_to 'New Relief Centre', new_relief_centre_path %>

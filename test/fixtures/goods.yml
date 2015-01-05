@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: MyString
+  quantity: MyString
+  received_date: 2015-01-05
+  received_from: MyString
+
+two:
+  item: MyString
+  quantity: MyString
+  received_date: 2015-01-05
+  received_from: MyString

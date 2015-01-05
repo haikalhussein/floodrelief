@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Item:</strong>
+  <%= @good.item %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @good.quantity %>
+</p>
+
+<p>
+  <strong>Received date:</strong>
+  <%= @good.received_date %>
+</p>
+
+<p>
+  <strong>Received from:</strong>
+  <%= @good.received_from %>
+</p>
+
+<%= link_to 'Edit', edit_good_path(@good) %> |
+<%= link_to 'Back', goods_path %>

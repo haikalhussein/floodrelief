@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @relief_centre.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @relief_centre.address %>
+</p>
+
+<p>
+  <strong>Gps coordinate:</strong>
+  <%= @relief_centre.gps_coordinate %>
+</p>
+
+<%= link_to 'Edit', edit_relief_centre_path(@relief_centre) %> |
+<%= link_to 'Back', relief_centres_path %>

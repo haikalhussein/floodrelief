@@ -1,0 +1,29 @@
+<h1>Listing relief_centres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Gps coordinate</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @relief_centres.each do |relief_centre| %>
+      <tr>
+        <td><%= relief_centre.name %></td>
+        <td><%= relief_centre.address %></td>
+        <td><%= relief_centre.gps_coordinate %></td>
+        <td><%= link_to 'Show', relief_centre %></td>
+        <td><%= link_to 'Edit', edit_relief_centre_path(relief_centre) %></td>
+        <td><%= link_to 'Destroy', relief_centre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Relief centre', new_relief_centre_path %>

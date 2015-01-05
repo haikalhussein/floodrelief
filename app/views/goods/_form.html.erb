@@ -1,0 +1,33 @@
+<%= form_for(@good) do |f| %>
+  <% if @good.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@good.errors.count, "error") %> prohibited this good from being saved:</h2>
+
+      <ul>
+      <% @good.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :item %><br>
+    <%= f.text_field :item %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :received_date %><br>
+    <%= f.date_select :received_date %>
+  </div>
+  <div class="field">
+    <%= f.label :relief_centre_id %><br>
+    <%= f.select(:relief_centre_id, ReliefCentre.all.collect {|p| [ p.name, p.id ] }, {prompt: 'Pilih Pusat Pemindahan'}) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,50 @@
+<%= form_for(@relief_centre) do |f| %>
+  <% if @relief_centre.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@relief_centre.errors.count, "error") %> prohibited this relief_centre from being saved:</h2>
+
+      <ul>
+      <% @relief_centre.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nama Pusat Pemindahan" %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address, "Alamat" %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :gps_coordinate, "Koordinat GPS" %><br>
+    <%= f.text_field :gps_coordinate %>
+  </div>
+  <div class="field">
+    <%= f.label :district %><br>
+    <%= f.text_field :district %>
+  </div>
+  <div class="field">
+    <%= f.label :mukim %><br>
+    <%= f.text_field :mukim %>
+  </div>
+  <div class="field">
+    <%= f.label "Pegawai Dihubungi" %><br>
+  </div>
+
+  <div class="field">
+    <% for user in User.all %>
+       <tr>
+         <td><%= check_box_tag "relief_centre[user_ids][]", user.id, @relief_centre.users.include?(user) %></td>
+         <td><%= user.name %></td>
+       </tr>
+     <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
